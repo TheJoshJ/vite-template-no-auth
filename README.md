@@ -1,6 +1,6 @@
-# Modern React Application with Authentication
+# Modern React Application
 
-A modern React application built with TypeScript, Vite, TailwindCSS, React Router, Tanstack React Query, and Clerk Authentication.
+A modern React application built with TypeScript, Vite, TailwindCSS, React Router, and Tanstack React Query.
 
 ## Features
 
@@ -9,8 +9,7 @@ A modern React application built with TypeScript, Vite, TailwindCSS, React Route
 - 🎨 **TailwindCSS 4** - Utility-first CSS framework
 - 🧭 **React Router** - Declarative routing for React
 - 🔄 **Tanstack React Query** - Data fetching and state management
-- 🔐 **Clerk Authentication** - User authentication and management
-- 🎭 **ShadCN UI** - Complete component library pre-installed
+- 🎭 **ShadCN UI** - Essential components (Button, ScrollArea)
 - 📱 **Responsive Design** - Mobile-first approach
 - 🧩 **Component Structure** - Organized component architecture
 - 🌙 **Dark/Light Mode** - Theme switching with next-themes
@@ -38,13 +37,7 @@ yarn
 pnpm install
 ```
 
-3. Create a `.env` file in the root directory with your Clerk keys:
-```
-VITE_CLERK_PUBLISHABLE_KEY=your_publishable_key
-CLERK_SECRET_KEY=your_secret_key
-```
-
-4. Start the development server:
+3. Start the development server:
 ```bash
 npm start
 # or
@@ -61,7 +54,6 @@ pnpm start
 ├── public/               # Static assets
 ├── src/
 │   ├── components/       # Reusable components
-│   │   ├── auth/         # Authentication components
 │   │   └── ui/           # UI components (ShadCN)
 │   ├── hooks/            # Custom React hooks
 │   ├── lib/              # Utility functions
@@ -88,17 +80,6 @@ pnpm start
 - `npm run preview` - Preview the production build locally
 - `npm run lint` - Run ESLint
 
-## Environment Variables
-
-Create a `.env` file in the root directory with the following variables:
-
-```
-VITE_CLERK_PUBLISHABLE_KEY=your_publishable_key
-CLERK_SECRET_KEY=your_secret_key
-```
-
-These keys are required for Clerk authentication to work properly. You can get them from your Clerk dashboard.
-
 ## Adding New Routes
 
 1. Create a new page component in `src/pages/`
@@ -116,15 +97,11 @@ export const routes: Record<string, RouteConfig> = {
 }
 ```
 
-## Authentication
-
-This project uses Clerk for authentication. The Clerk provider is set up in `src/main.tsx` and integrated with React Router in `src/router.tsx`.
-
 ## UI Components
 
-This project comes with the complete ShadCN UI component library pre-installed. ShadCN UI provides a comprehensive set of accessible, customizable, and reusable components built on top of Radix UI primitives.
+This project includes essential ShadCN UI components (Button and ScrollArea) that are currently being used in the application. ShadCN UI provides accessible, customizable components built on top of Radix UI primitives.
 
-All components are available in the `src/components/ui` directory and can be imported and used directly in your application. The components are styled with TailwindCSS and can be customized to match your design system.
+Additional components can be added as needed using the ShadCN CLI. The components are styled with TailwindCSS and can be customized to match your design system.
 
 For more information on available components and their usage, refer to the [ShadCN UI documentation](https://ui.shadcn.com/docs).
 

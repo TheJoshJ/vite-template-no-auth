@@ -1,4 +1,3 @@
-import { SignedIn, SignedOut, useClerk } from "@clerk/clerk-react";
 import { visibleRoutes } from "../routes";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
@@ -6,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const navigate = useNavigate();
-  const clerk = useClerk();
 
   return (
     <nav className="flex justify-end items-center">
@@ -22,24 +20,6 @@ export const Navbar = () => {
             </Button>
           </div>
         ))}
-        <SignedOut>
-          <Button
-            variant="ghost"
-            onClick={() => clerk.openSignIn({})}
-            className="text-foreground hover:text-primary-200 transition-colors"
-          >
-            Sign In
-          </Button>
-        </SignedOut>
-        <SignedIn>
-          <Button
-            variant="ghost"
-            onClick={() => clerk.signOut()}
-            className="text-foreground hover:text-primary-200 transition-colors"
-          >
-            Sign Out
-          </Button>
-        </SignedIn>
         <ModeToggle />
       </ul>
     </nav>
